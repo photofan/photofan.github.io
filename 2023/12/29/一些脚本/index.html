@@ -1,242 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>一些脚本 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="该文章基本汇集了VPS所需要的一切脚本。DD网络重装脚本：系统默认为debian12moeclub大佬的脚本bash &lt;(wget –no-check-certificate -qO- ‘https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;MoeClub&#x2F;Note&#x2F;master&#x2F;InstallNET.sh‘) -d 12 -v 64 -p 密码 -port 端口 -a -fi">
-<meta property="og:type" content="article">
-<meta property="og:title" content="一些脚本">
-<meta property="og:url" content="http://example.com/2023/12/29/%E4%B8%80%E4%BA%9B%E8%84%9A%E6%9C%AC/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="该文章基本汇集了VPS所需要的一切脚本。DD网络重装脚本：系统默认为debian12moeclub大佬的脚本bash &lt;(wget –no-check-certificate -qO- ‘https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;MoeClub&#x2F;Note&#x2F;master&#x2F;InstallNET.sh‘) -d 12 -v 64 -p 密码 -port 端口 -a -fi">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-12-29T08:37:09.000Z">
-<meta property="article:modified_time" content="2023-12-29T08:59:09.135Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<meta name="generator" content="Hexo 7.0.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-一些脚本" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/12/29/%E4%B8%80%E4%BA%9B%E8%84%9A%E6%9C%AC/" class="article-date">
-  <time class="dt-published" datetime="2023-12-29T08:37:09.000Z" itemprop="datePublished">2023-12-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      一些脚本
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>该文章基本汇集了VPS所需要的一切脚本。<br>DD网络重装脚本：系统默认为debian12<br>moeclub大佬的脚本<br>bash &lt;(wget –no-check-certificate -qO- ‘<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh">https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh</a>‘) -d 12 -v 64 -p 密码 -port 端口 -a -firmware<br>leitbogioro大佬的脚本（推荐）<br>wget –no-check-certificate -qO InstallNET.sh ‘<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh">https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh</a>‘ &amp;&amp; chmod a+x InstallNET.sh &amp;&amp; bash InstallNET.sh -debian 12 -pwd ‘密码’<br>beta.gs大佬的脚本<br>wget –no-check-certificate -O NewReinstall.sh <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/fcurrk/reinstall/master/NewReinstall.sh">https://raw.githubusercontent.com/fcurrk/reinstall/master/NewReinstall.sh</a> &amp;&amp; chmod a+x NewReinstall.sh &amp;&amp; bash NewReinstall.sh<br>服务器综合测试脚本（融合怪）（推荐）<br>curl -L <a target="_blank" rel="noopener" href="https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh">https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh</a> -o ecs.sh &amp;&amp; chmod +x ecs.sh &amp;&amp; bash ecs.sh<br>性能测试脚本<br>YABS（推荐）<br>wget -qO- yabs.sh | bash<br>复制代码</p>
-<p>流量稀缺的服务器（不测试iperf网络）<br>curl -sL yabs.sh | bash -s – -i<br>复制代码</p>
-<p>我更喜欢geekbench5（不测试geekbench6）<br>curl -sL yabs.sh | bash -s – -5<br>复制代码</p>
-<p>我喜欢geekbench5，但服务器流量稀缺（不测试geekbench6、不测试iperf网络）<br>curl -sL yabs.sh | bash -s – -5 -i<br>复制代码</p>
-<p>Geekbench 5 专测脚本 NS论坛大佬@google 开发<br>bash &lt;(curl -sL gb5.top)</p>
-<p>LemonBench<br>wget -qO- <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/LemonBench/LemonBench/main/LemonBench.sh">https://raw.githubusercontent.com/LemonBench/LemonBench/main/LemonBench.sh</a> | bash -s – –fast<br>复制代码</p>
-<p>UnixBench.sh<br>wget –no-check-certificate <a target="_blank" rel="noopener" href="https://github.com/teddysun/across/raw/master/unixbench.sh">https://github.com/teddysun/across/raw/master/unixbench.sh</a><br>chmod +x unixbench.sh<br>.&#x2F;unixbench.sh<br>复制代码<br>网络测试脚本</p>
-<p>hyperspeed 三网测速（推荐）（未开源）<br>bash &lt;(curl -Lso- <a target="_blank" rel="noopener" href="https://bench.im/hyperspeed">https://bench.im/hyperspeed</a>)<br>复制代码</p>
-<p>AutoTrace 三网回程线路显示（推荐）<br>wget -N –no-check-certificate <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Chennhaoo/Shell_Bash/master/AutoTrace.sh">https://raw.githubusercontent.com/Chennhaoo/Shell_Bash/master/AutoTrace.sh</a> &amp;&amp; chmod +x AutoTrace.sh &amp;&amp; bash AutoTrace.sh<br>复制代码</p>
-<p>backtrace 三网回程线路直接显示（小白用这个）<br>curl <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh">https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh</a> -sSf | sh<br>复制代码</p>
-<p>Bench 网络带宽及硬盘读写速率（国外部分+国内部分节点）<br>wget -qO- bench.sh | bash<br>复制代码</p>
-<p>SuperBench.sh 网络带宽及硬盘读写速率（国内三网+speedtest+fast）<br>wget -qO- –no-check-certificate <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/oooldking/script/master/superbench.sh">https://raw.githubusercontent.com/oooldking/script/master/superbench.sh</a> | bash<br>复制代码</p>
-<p>超售测试脚本<br>wget –no-check-certificate -O memoryCheck.sh <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/uselibrary/memoryCheck/main/memoryCheck.sh">https://raw.githubusercontent.com/uselibrary/memoryCheck/main/memoryCheck.sh</a> &amp;&amp; chmod +x memoryCheck.sh &amp;&amp; bash memoryCheck.sh<br>复制代码</p>
-<p>移除virtio_balloon模块<br>rmmod virtio_balloon<br>复制代码</p>
-<p>内存填充测试<br>apt-get update<br>apt-get install wget build-essential -y<br>wget <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/FunctionClub/Memtester/master/memtester.cpp">https://raw.githubusercontent.com/FunctionClub/Memtester/master/memtester.cpp</a><br>gcc -l stdc++ memtester.cpp<br>.&#x2F;a.out<br>复制代码</p>
-<p>流媒体测试脚本<br>RegionRestrictionCheck（推荐）<br>bash &lt;(curl -L -s check.unlock.media)<br>复制代码</p>
-<p>openai解锁检测<br>bash &lt;(curl -Ls <a target="_blank" rel="noopener" href="https://github.com/ludashi2020/OpenAI-Checker/raw/main/openai.sh">https://github.com/ludashi2020/OpenAI-Checker/raw/main/openai.sh</a>)<br>复制代码</p>
-<p>BBR脚本<br>一键开启BBR（适用于较新的Debian、Ubuntu）<br>echo “net.core.default_qdisc&#x3D;fq” &gt;&gt; &#x2F;etc&#x2F;sysctl.conf<br>echo “net.ipv4.tcp_congestion_control&#x3D;bbr” &gt;&gt; &#x2F;etc&#x2F;sysctl.conf<br>sysctl -p<br>sysctl net.ipv4.tcp_available_congestion_control<br>lsmod | grep bbr<br>复制代码</p>
-<p>Linux-NetSpeed（锐速&#x2F;bbrplus&#x2F;bbr魔改版）<br>wget -N –no-check-certificate “<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh">https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh</a>“<br>chmod +x tcp.sh<br>.&#x2F;tcp.sh<br>复制代码</p>
-<p>ylx大佬的锐速&#x2F;BBRPLUS&#x2F;BBR2<br>wget -O tcpx.sh “<a target="_blank" rel="noopener" href="https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh">https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh</a>“ &amp;&amp; chmod +x tcpx.sh &amp;&amp; .&#x2F;tcpx.sh<br>复制代码</p>
-<p>moerats大佬的添加swap脚本<br>wget <a target="_blank" rel="noopener" href="https://www.moerats.com/usr/shell/swap.sh">https://www.moerats.com/usr/shell/swap.sh</a> &amp;&amp; bash swap.sh<br>复制代码</p>
-<p>spiritlhl大佬的zram内存压缩脚本<br>curl -L <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/spiritLHLS/addzram/main/addzram.sh">https://raw.githubusercontent.com/spiritLHLS/addzram/main/addzram.sh</a> -o addzram.sh &amp;&amp; chmod +x addzram.sh &amp;&amp; bash addzram.sh<br>复制代码</p>
-<p>cloudflare warp脚本 添加IPv4&#x2F;IPv6网络（2023.12.10更新）<br>wget -N <a target="_blank" rel="noopener" href="https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh">https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh</a> &amp;&amp; bash menu.sh [option] [lisence&#x2F;url&#x2F;token]<br>复制代码</p>
-<p>fail2ban服务器ssh防爆破<br>wget <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh">https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh</a> &amp;&amp; bash fail2ban.sh 2&gt;&amp;1 | tee fail2ban.log<br>复制代码</p>
-<p>独立服务器硬盘时间<br>wget -q <a target="_blank" rel="noopener" href="https://github.com/Aniverse/A/raw/i/a">https://github.com/Aniverse/A/raw/i/a</a> &amp;&amp; bash a<br>复制代码</p>
-<p>常用软件脚本</p>
-<p>Docker<br>curl -sSL <a target="_blank" rel="noopener" href="https://get.docker.com/">https://get.docker.com/</a> | sh<br>复制代码</p>
-<p>Aria2一键安装脚本<br>wget -N git.io&#x2F;aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh<br>复制代码</p>
-<p>XUI<br>bash &lt;(curl -Ls <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh">https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh</a>)<br>复制代码</p>
-<p>qbittorrent 4.3.9<br><a target="_blank" rel="noopener" href="https://hostloc.com/thread-1024684-1-1.html">https://hostloc.com/thread-1024684-1-1.html</a></p>
-<p>宝塔一键挂载硬盘脚本<br>wget -O auto_disk.sh <a target="_blank" rel="noopener" href="http://download.bt.cn/tools/auto_disk.sh">http://download.bt.cn/tools/auto_disk.sh</a> &amp;&amp; bash auto_disk.sh<br>复制代码</p>
-<p>acme生成免费证书<br>curl <a target="_blank" rel="noopener" href="https://get.acme.sh/">https://get.acme.sh</a> | sh<br>复制代码</p>
-<p>剑皇刷流量脚本<br>wget <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/maintell/webBenchmark@releases/download/0.6/webBenchmark_linux_x64">https://cdn.jsdelivr.net/gh/maintell/webBenchmark@releases/download/0.6/webBenchmark_linux_x64</a><br>chmod +x webBenchmark_linux_x64<br>.&#x2F;webBenchmark_linux_x64 -c 64 -s http:&#x2F;&#x2F;链接.jpg<br>复制代码</p>
-<p>腾讯云删除监控<br>sudo -i<br>systemctl stop tat_agent<br>systemctl disable tat_agent<br>&#x2F;usr&#x2F;local&#x2F;qcloud&#x2F;stargate&#x2F;admin&#x2F;uninstall.sh<br>&#x2F;usr&#x2F;local&#x2F;qcloud&#x2F;YunJing&#x2F;uninst.sh<br>&#x2F;usr&#x2F;local&#x2F;qcloud&#x2F;monitor&#x2F;barad&#x2F;admin&#x2F;uninstall.sh<br>rm -f &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;tat_agent.service<br>rm -rf &#x2F;usr&#x2F;local&#x2F;qcloud<br>rm -rf &#x2F;usr&#x2F;local&#x2F;sa<br>rm -rf &#x2F;usr&#x2F;local&#x2F;agenttools<br>rm -rf &#x2F;usr&#x2F;local&#x2F;qcloud<br>process&#x3D;(sap100 secu-tcs-agent sgagent64 barad_agent agent agentPlugInD pvdriver )<br>for i in ${process[@]}<br>do<br>  for A in $(ps aux | grep $i | grep -v grep | awk ‘{print $2}’)<br>  do<br>    kill -9 $A<br>  done<br>done<br>复制代码</p>
-<p>测试 25 端口是否开放<br>telnet smtp.aol.com 25<br>复制代码</p>
-<p>测试 IPv4 优先还是 IPv6 优先<br>curl ip.p3terx.com<br>复制代码</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/29/%E4%B8%80%E4%BA%9B%E8%84%9A%E6%9C%AC/" data-id="clqqfouko0001pwu70jacbl7a" data-title="一些脚本" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2023/12/29/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-  
-    
+{% block page_class %}page-post-detail{% endblock %}
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li></ul>
+
+{% block content %}
+
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
+
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
 
+{% endblock %}
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/12/29/%E4%B8%80%E4%BA%9B%E8%84%9A%E6%9C%AC/">一些脚本</a>
-          </li>
-        
-          <li>
-            <a href="/2023/12/29/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}
