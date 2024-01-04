@@ -16,21 +16,23 @@
   <meta name="author" content="Jason M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="感谢O大佬的天书秘籍和一对一地指导，让我用上了dns转发器，我现在记录一下过程 在PVE中创建虚拟机并安装全新debian系统，在控制台运行以下命令更新软件源apt update &amp;&amp; apt upgrade -y开启root远端登录和22端口，编辑&#x2F;etc&#x2F;ssh&#x2F;sshd_config文件su -nano &#x2F;etc&#x2F;ssh&amp;#x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2023/12/29/hello-world/index.html">
+<meta property="og:title" content="debian安装DNS转发器mosdns-cn">
+<meta property="og:url" content="http://example.com/2024/01/03/debian%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85DNS%E8%BD%AC%E5%8F%91%E5%99%A8mosdns-cn/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="感谢O大佬的天书秘籍和一对一地指导，让我用上了dns转发器，我现在记录一下过程 在PVE中创建虚拟机并安装全新debian系统，在控制台运行以下命令更新软件源apt update &amp;&amp; apt upgrade -y开启root远端登录和22端口，编辑&#x2F;etc&#x2F;ssh&#x2F;sshd_config文件su -nano &#x2F;etc&#x2F;ssh&amp;#x">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-29T04:45:17.135Z">
-<meta property="article:modified_time" content="2023-12-29T04:45:17.135Z">
+<meta property="article:published_time" content="2024-01-03T06:07:10.000Z">
+<meta property="article:modified_time" content="2024-01-03T09:11:38.993Z">
 <meta property="article:author" content="Jason M">
+<meta property="article:tag" content="DNS">
+<meta property="article:tag" content="Mosdns-cn">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>debian安装DNS转发器mosdns-cn - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="debian安装DNS转发器mosdns-cn"></span>
           
         </div>
 
@@ -207,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-29 12:45" pubdate>
-          2023年12月29日 下午
+        <time datetime="2024-01-03 14:07" pubdate>
+          2024年1月3日 下午
         </time>
       </span>
     
@@ -219,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 字
+          558 字
         
       </span>
     
@@ -230,7 +232,7 @@
         
         
         
-          1 分钟
+          5 分钟
         
       </span>
     
@@ -267,25 +269,21 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">debian安装DNS转发器mosdns-cn</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+                <p>感谢O大佬的天书秘籍和一对一地指导，让我用上了dns转发器，我现在记录一下过程</p>
+<p>在PVE中创建虚拟机并安装全新debian系统，在控制台运行以下命令更新软件源<br>apt update &amp;&amp; apt upgrade -y<br>开启root远端登录和22端口，编辑&#x2F;etc&#x2F;ssh&#x2F;sshd_config文件<br>su -<br>nano &#x2F;etc&#x2F;ssh&#x2F;sshd_config<br>找到配置参数：Port 22，将前面的#删掉；找到参数：PermitRootLogin，将该参数后面的值修改为yes即可<br>Port 22<br>PermitRootLogin yes</p>
+<p>退出保存并重启<br>ctrl+x<br>reboot</p>
+<p>以下在SSH工具中进行。config.yaml;domain.txt;geoip.dat;geosite.dat;LICENSE;mosdns-cn;mosdns-cn.service;README.md,这些所有拉的文件都要给权限0777**</p>
+<p>mosdns-cn 拉到 &#x2F;usr&#x2F;bin (0777)，如下图从左拖到右边</p>
+<p>添加权限<br>chmod 777 &#x2F;usr&#x2F;bin&#x2F;mosdns-cn<br>新建mosdns文件夹<br>mkdir &#x2F;etc&#x2F;mosdns<br>生成一个配置文件模板</p>
+<p>mosdns-cn –gen-config &#x2F;etc&#x2F;mosdns&#x2F;config.yaml<br>将O大佬文件夹里面的除“安装步骤”和“mosdns-cn.service”外，其余文件都拉到上面&#x2F;etc&#x2F;mosdns 文件夹内，config.yaml直接替换生成的模板，然后给此文件加权限<br>chmod 777 -R &#x2F;etc&#x2F;mosdns</p>
+<p>在LXC 下装两个adguardhome ， 其中国内adguardhome网关填主路由直连 上游：tls:&#x2F;&#x2F;223.5.5.5:853 tls:&#x2F;&#x2F;223.6.6.6:853， 国外adguardhome 网关填旁路由，走代理解析上游：tls:&#x2F;&#x2F;1.1.1.1:853 tls:&#x2F;&#x2F;1.0.0.1:853, Bootstrap DNS 服务器填写本身IP。<br>config.yaml 里面 192.168.66.7 是国内 adguardhome的IP， 192.168.66.14 是国外adguardhome的IP ， 按自己设置的IP 改下<br>文件夹里面 geoip.dat和geosite.dat 两个文件（请自行更新，下载网址：<a target="_blank" rel="noopener" href="https://github.com/Loyalsoldier/v2ray-rules-dat%EF%BC%89">https://github.com/Loyalsoldier/v2ray-rules-dat）</a><br>载入一次配置文件<br>mosdns-cn –config &#x2F;etc&#x2F;mosdns&#x2F;config.yaml<br>按上面方法将文件夹中mosdns-cn.service 拉到 &#x2F;etc&#x2F;systemd&#x2F;system，并给权限<br>chmod 777 &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;mosdns-cn.service<br>指定mosdns-cn的配置文件路径<br>mosdns-cn –service install -s :53 –config &#x2F;etc&#x2F;mosdns&#x2F;config.yaml –dir &#x2F;etc&#x2F;mosdns -S<br>下面三条命令逐条执行，分别是开启mosdns-cn,开机运行，查看状态<br>systemctl start mosdns-cn<br>systemctl enable mosdns-cn<br>systemctl status mosdns-cn<br>出现下图这样，恭喜你安装完成了。</p>
+<p>最后，再次感谢O大佬！</p>
+<span id="more"></span>
                 
               </div>
             
@@ -293,6 +291,36 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Diary/" class="category-chain-item">Diary</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/DNS/" class="print-no-link">#DNS</a>
+      
+        <a href="/tags/Mosdns-cn/" class="print-no-link">#Mosdns-cn</a>
+      
+    </div>
   
 </div>
 
@@ -302,8 +330,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2023/12/29/hello-world/</div>
+      <div>debian安装DNS转发器mosdns-cn</div>
+      <div>http://example.com/2024/01/03/debian系统安装DNS转发器mosdns-cn/</div>
     </div>
     <div class="license-meta">
       
@@ -315,7 +343,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月29日</div>
+          <div>2024年1月3日</div>
         </div>
       
       
@@ -347,15 +375,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/03/debian%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85DNS%E8%BD%AC%E5%8F%91%E5%99%A8mosdns-cn/" title="debian安装DNS转发器mosdns-cn">
+                      <a href="/2024/01/03/Ubuntu%20VM%E5%AE%89%E8%A3%85sing-box%20tun/" title="Ubuntu VM安装sing-box tun">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">debian安装DNS转发器mosdns-cn</span>
+                        <span class="hidden-mobile">Ubuntu VM安装sing-box tun</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/12/29/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

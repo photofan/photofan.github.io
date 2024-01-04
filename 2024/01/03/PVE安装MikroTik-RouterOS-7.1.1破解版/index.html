@@ -16,21 +16,23 @@
   <meta name="author" content="Jason M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="PVE下的导入过程 1.准备好PVE系统和ROS镜像文件MikroTik-RouterOS-7.1.1.ova 2.用WinSCP等工具，将MikroTik-RouterOS-7.1.1.ova文件上传至PVE中，路径&#x2F;var&#x2F;lib&#x2F;vz&#x2F;template&#x2F;qemu&#x2F; 3.用putty等工具，登录PVE后台，解压文件获得ovf、vmdk">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2023/12/29/hello-world/index.html">
+<meta property="og:title" content="PVE安装MikroTik-RouterOS-7.1.1破解版">
+<meta property="og:url" content="http://example.com/2024/01/03/PVE%E5%AE%89%E8%A3%85MikroTik-RouterOS-7.1.1%E7%A0%B4%E8%A7%A3%E7%89%88/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="PVE下的导入过程 1.准备好PVE系统和ROS镜像文件MikroTik-RouterOS-7.1.1.ova 2.用WinSCP等工具，将MikroTik-RouterOS-7.1.1.ova文件上传至PVE中，路径&#x2F;var&#x2F;lib&#x2F;vz&#x2F;template&#x2F;qemu&#x2F; 3.用putty等工具，登录PVE后台，解压文件获得ovf、vmdk">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-29T04:45:17.135Z">
-<meta property="article:modified_time" content="2023-12-29T04:45:17.135Z">
+<meta property="article:published_time" content="2024-01-03T08:10:10.000Z">
+<meta property="article:modified_time" content="2024-01-03T12:10:03.114Z">
 <meta property="article:author" content="Jason M">
+<meta property="article:tag" content="RouterOS">
+<meta property="article:tag" content="MikroTik">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>PVE安装MikroTik-RouterOS-7.1.1破解版 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="PVE安装MikroTik-RouterOS-7.1.1破解版"></span>
           
         </div>
 
@@ -207,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-29 12:45" pubdate>
-          2023年12月29日 下午
+        <time datetime="2024-01-03 16:10" pubdate>
+          2024年1月3日 下午
         </time>
       </span>
     
@@ -219,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 字
+          323 字
         
       </span>
     
@@ -230,7 +232,7 @@
         
         
         
-          1 分钟
+          3 分钟
         
       </span>
     
@@ -267,25 +269,23 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">PVE安装MikroTik-RouterOS-7.1.1破解版</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+                <p>PVE下的导入过程</p>
+<p>1.准备好PVE系统和ROS镜像文件MikroTik-RouterOS-7.1.1.ova</p>
+<p>2.用WinSCP等工具，将MikroTik-RouterOS-7.1.1.ova文件上传至PVE中，路径&#x2F;var&#x2F;lib&#x2F;vz&#x2F;template&#x2F;qemu&#x2F;</p>
+<p>3.用putty等工具，登录PVE后台，解压文件获得ovf、vmdk文件<br>  cd &#x2F;var&#x2F;lib&#x2F;vz&#x2F;template&#x2F;qemu&#x2F;<br>  tar -xvf MikroTik-RouterOS-7.1.1.ova<br>  ls<br>  输出结果：<br>    MikroTik-RouterOS-7.1.1-disk1.vmdk  MikroTik-RouterOS-7.1.1.ova<br>    MikroTik-RouterOS-7.1.1.mf          MikroTik-RouterOS-7.1.1.ovf</p>
+<p>4.SSH工具导入镜像<br>  qm importovf 201 MikroTik-RouterOS-7.1.1.ovf local-lvm –format qcow2</p>
+<p>   注：101是虚拟机ID，原来必须不存在，会自动创建。</p>
+<p>5.修改虚拟机配置文件<br>  vi &#x2F;etc&#x2F;pve&#x2F;nodes&#x2F;pve&#x2F;qemu-server&#x2F;201.conf<br>  将    ide0: local-lvm:vm-201-disk-0<br>  改成  ide0: local-lvm:vm-201-disk-0,model&#x3D;VMware%20Virtual%20IDE%20Hard%20Drive,serial&#x3D;00000000000000000001<br>    注：路径中nodes后面的PVE，是安装PVE时自己命名的节点名称（小写字母），根据自己的实际情况修改；注意不要漏了英文状态下的逗号。</p>
+<p>6.在PVE的web页面中添加网卡，默认没有网卡。</p>
+<p>用户名admin密码admin</p>
+<p>问题：<br>root@My:&#x2F;var&#x2F;lib&#x2F;vz&#x2F;template&#x2F;qemu#  qm importovf 105 MikroTik-RouterOS-7.1.1.ovf local-lvm –format qcow2<br>400 too many arguments<br>qm importovf <vmid> <manifest> <storage> [OPTIONS]<br>这是什么情况？</p>
+<p>local-lvm –format qcow2<br>这里语法错了改为：<br>local-lvm –format qcow2    就可以解决</p>
+<span id="more"></span>
                 
               </div>
             
@@ -293,6 +293,36 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Diary/" class="category-chain-item">Diary</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/RouterOS/" class="print-no-link">#RouterOS</a>
+      
+        <a href="/tags/MikroTik/" class="print-no-link">#MikroTik</a>
+      
+    </div>
   
 </div>
 
@@ -302,8 +332,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2023/12/29/hello-world/</div>
+      <div>PVE安装MikroTik-RouterOS-7.1.1破解版</div>
+      <div>http://example.com/2024/01/03/PVE安装MikroTik-RouterOS-7.1.1破解版/</div>
     </div>
     <div class="license-meta">
       
@@ -315,7 +345,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月29日</div>
+          <div>2024年1月3日</div>
         </div>
       
       
@@ -347,15 +377,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/03/debian%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85DNS%E8%BD%AC%E5%8F%91%E5%99%A8mosdns-cn/" title="debian安装DNS转发器mosdns-cn">
+                      <a href="/2024/01/03/PVE%E5%AE%89%E8%A3%85lxc%20AdGuardHome/" title="PVE安装lxc AdGuardHome">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">debian安装DNS转发器mosdns-cn</span>
+                        <span class="hidden-mobile">PVE安装lxc AdGuardHome</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2024/01/03/Proxmox%20VE%208.0.3%E6%8D%A2%E6%BA%90%E5%B9%B6%E6%9B%B4%E6%96%B0%E8%87%B38.1.3/" title="Proxmox VE 8.0.3换源并更新至8.1.3">
+                        <span class="hidden-mobile">Proxmox VE 8.0.3换源并更新至8.1.3</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
