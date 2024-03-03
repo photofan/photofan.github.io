@@ -1,0 +1,523 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>全新ubuntu安装tproxy singbox并安装WG回家 | 搜寻完美</title><meta name="author" content="Jason M"><meta name="copyright" content="Jason M"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="特别鸣谢： O大佬的天书和一对一地指导；XBB 大佬 亲自规划 亲自手打；PH 大佬 折腾无极限；Mike大佬 看看帮助下 的全力支持 安装过程中如果出错，运行此命令查看sudo journalctl -u sing-box –output cat -f 下面正式开始：全新ubuntu23.10    apt updateapt upgrade -ydpkg-reconfigure tzdata">
+<meta property="og:type" content="article">
+<meta property="og:title" content="全新ubuntu安装tproxy singbox并安装WG回家">
+<meta property="og:url" content="https://www.digs.eu.org/2024/01/03/ubuntu%E5%AE%89%E8%A3%85tproxy%20singbox%E5%B9%B6%E5%AE%89%E8%A3%85WG%E5%9B%9E%E5%AE%B6/index.html">
+<meta property="og:site_name" content="搜寻完美">
+<meta property="og:description" content="特别鸣谢： O大佬的天书和一对一地指导；XBB 大佬 亲自规划 亲自手打；PH 大佬 折腾无极限；Mike大佬 看看帮助下 的全力支持 安装过程中如果出错，运行此命令查看sudo journalctl -u sing-box –output cat -f 下面正式开始：全新ubuntu23.10    apt updateapt upgrade -ydpkg-reconfigure tzdata">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img2.imgtp.com/2024/01/21/Z0SxNu9U.jpg">
+<meta property="article:published_time" content="2024-01-03T09:00:10.000Z">
+<meta property="article:modified_time" content="2024-01-09T04:07:18.944Z">
+<meta property="article:author" content="Jason M">
+<meta property="article:tag" content="Proxy">
+<meta property="article:tag" content="Sing-Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2.imgtp.com/2024/01/21/Z0SxNu9U.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.digs.eu.org/2024/01/03/ubuntu%E5%AE%89%E8%A3%85tproxy%20singbox%E5%B9%B6%E5%AE%89%E8%A3%85WG%E5%9B%9E%E5%AE%B6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '全新ubuntu安装tproxy singbox并安装WG回家',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-01-09 12:07:18'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://img2.imgtp.com/2024/01/21/TDyQEszh.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 博文</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img2.imgtp.com/2024/01/21/Z0SxNu9U.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="搜寻完美"><span class="site-name">搜寻完美</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 博文</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">全新ubuntu安装tproxy singbox并安装WG回家</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-03T09:00:10.000Z" title="发表于 2024-01-03 17:00:10">2024-01-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-09T04:07:18.944Z" title="更新于 2024-01-09 12:07:18">2024-01-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Diary/">Diary</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="全新ubuntu安装tproxy singbox并安装WG回家"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>特别鸣谢： O大佬的天书和一对一地指导；XBB 大佬 亲自规划 亲自手打；PH 大佬 折腾无极限；Mike大佬 看看帮助下 的全力支持</strong></p>
+<p><em>安装过程中如果出错，运行此命令查看</em><br>sudo journalctl -u sing-box –output cat -f</p>
+<p><strong>下面正式开始：</strong><br>全新ubuntu23.10</p>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>apt update<br>apt upgrade -y<br>dpkg-reconfigure tzdata    ( 修改时间 ）<br>apt -y install curl git build-essential libssl-dev libevent-dev zlib1g-dev gcc-mingw-w64</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>curl -L <a target="_blank" rel="noopener" href="https://go.dev/dl/go1.21.4.linux-amd64.tar.gz">https://go.dev/dl/go1.21.4.linux-amd64.tar.gz</a> -o go1.21.4.linux-amd64.tar.gz<br>tar -C &#x2F;usr&#x2F;local -xzf go1.21.4.linux-amd64.tar.gz<br>echo ‘export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;go&#x2F;bin’ &gt; &#x2F;etc&#x2F;profile.d&#x2F;golang.sh<br>source &#x2F;etc&#x2F;profile.d&#x2F;golang.sh</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>go install -v -tags with_quic,with_grpc,with_dhcp,with_wireguard,with_ech,with_utls,with_reality_server,with_clash_api,with_gvisor,with_v2ray_api,with_lwip,with_acme github.com&#x2F;sagernet&#x2F;sing-box&#x2F;cmd&#x2F;sing-box@latest</p>
+</blockquote>
+<p><em>测试版本与上面正式版本二选一： go install -v -tags with_quic,with_grpc,with_dhcp,with_wireguard,with_ech,with_utls,with_reality_server,with_clash_api,with_gvisor,with_v2ray_api,with_lwip github.com&#x2F;sagernet&#x2F;sing-box&#x2F;cmd&#x2F;<a href="mailto:&#x73;&#x69;&#x6e;&#103;&#45;&#98;&#x6f;&#x78;&#64;&#118;&#49;&#x2e;&#56;&#x2e;&#x30;&#45;&#97;&#108;&#x70;&#x68;&#x61;&#x2e;&#49;&#50;">&#x73;&#x69;&#x6e;&#103;&#45;&#98;&#x6f;&#x78;&#64;&#118;&#49;&#x2e;&#56;&#x2e;&#x30;&#45;&#97;&#108;&#x70;&#x68;&#x61;&#x2e;&#49;&#50;</a></em></p>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>cp $(go env GOPATH)&#x2F;bin&#x2F;sing-box &#x2F;usr&#x2F;local&#x2F;bin&#x2F;<br>mkdir -p &#x2F;usr&#x2F;local&#x2F;etc&#x2F;sing-box</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;sing-box.service</p>
+</blockquote>
+<p>下面是sing-box.service文件内容：</p>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>[Unit]<br>Description&#x3D;sing-box service<br>Documentation&#x3D;<a target="_blank" rel="noopener" href="https://sing-box.sagernet.org/">https://sing-box.sagernet.org</a><br>After&#x3D;network.target nss-lookup.target</p>
+<blockquote>
+</blockquote>
+<p>[Service]<br>CapabilityBoundingSet&#x3D;CAP_NET_ADMIN CAP_NET_BIND_SERVICE<br>AmbientCapabilities&#x3D;CAP_NET_ADMIN CAP_NET_BIND_SERVICE<br>ExecStart&#x3D;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;sing-box run -c &#x2F;usr&#x2F;local&#x2F;etc&#x2F;sing-box&#x2F;config.json<br>Restart&#x3D;on-failure<br>RestartSec&#x3D;1800s<br>LimitNOFILE&#x3D;infinity</p>
+<blockquote>
+</blockquote>
+<p>[Install]<br>WantedBy&#x3D;multi-user.target</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>nano &#x2F;usr&#x2F;local&#x2F;etc&#x2F;sing-box&#x2F;config.json     （这里复制黏贴下面的json文件内容）</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<pre><code>&#123;
+&quot;log&quot;: &#123;
+   &quot;disabled&quot;: false,
+   &quot;level&quot;: &quot;info&quot;,
+   &quot;output&quot;: &quot;usr/local/etc/sing-box/sing-box.log&quot;,
+   &quot;timestamp&quot;: true
+&#125;,
+&quot;dns&quot;: &#123;
+   &quot;servers&quot;: [
+  &#123;
+    &quot;tag&quot;: &quot;mosdns&quot;,
+    &quot;address&quot;: &quot;udp://192.168.66.10:53&quot;,
+    &quot;strategy&quot;: &quot;ipv4_only&quot;,
+    &quot;detour&quot;: &quot;direct&quot;
+  &#125;,
+  &#123;
+    &quot;tag&quot;: &quot;block&quot;,
+    &quot;address&quot;: &quot;rcode://success&quot;
+  &#125;
+],
+    &quot;strategy&quot;: &quot;prefer_ipv4&quot;,
+    &quot;disable_cache&quot;: false,
+    &quot;disable_expire&quot;: false
+&#125;,
+&quot;inbounds&quot;: [
+  &#123;
+    &quot;type&quot;: &quot;mixed&quot;,
+    &quot;listen&quot;: &quot;::&quot;,
+    &quot;listen_port&quot;: 10000
+  &#125;,
+  &#123;
+    &quot;type&quot;: &quot;direct&quot;,
+    &quot;tag&quot;: &quot;dns-in&quot;,
+    &quot;network&quot;: &quot;udp&quot;,
+    &quot;listen&quot;: &quot;::&quot;,
+    &quot;listen_port&quot;: 53
+  &#125;,
+   &#123;
+    &quot;type&quot;: &quot;tproxy&quot;,
+    &quot;tag&quot;: &quot;tproxy-in&quot;,
+    &quot;listen&quot;: &quot;::&quot;,
+    &quot;listen_port&quot;: 7896,
+    &quot;tcp_fast_open&quot;: true,
+    &quot;udp_fragment&quot;: true,
+    &quot;sniff&quot;: true,
+    &quot;sniff_override_destination&quot;: true,
+    &quot;domain_strategy&quot;: &quot;ipv4_only&quot;,
+    &quot;sniff_timeout&quot;: &quot;300ms&quot;,
+    &quot;udp_timeout&quot;: 300
+  &#125;  
+],
+&quot;outbounds&quot;: [
+    &#123;
+        &quot;type&quot;: &quot;vless&quot;,
+    &quot;tag&quot;: &quot;proxy&quot;,
+        &quot;server&quot;: &quot;142.171.157.46&quot;,
+        &quot;server_port&quot;: 19573,
+        &quot;uuid&quot;: &quot;1c8776e2-901f-4a0c-b298-3e3cc738f8b2&quot;,
+        &quot;flow&quot;: &quot;xtls-rprx-vision&quot;,
+        &quot;tls&quot;: &#123;
+            &quot;enabled&quot;: true,
+            &quot;server_name&quot;: &quot;www.lovelive-anime.jp&quot;,
+            &quot;utls&quot;: &#123;
+                &quot;enabled&quot;: true,
+                &quot;fingerprint&quot;: &quot;chrome&quot;
+            &#125;,
+            &quot;reality&quot;: &#123;
+                &quot;enabled&quot;: true,
+                &quot;public_key&quot;: &quot;4comh-7Jm_wZXJQ5QiLSCbVGQIbMUzHUIBdb0aFtLzM&quot;,
+                &quot;short_id&quot;: &quot;609f93a8&quot;
+            &#125;
+        &#125;,
+        &quot;packet_encoding&quot;: &quot;xudp&quot;
+    &#125;,
+       &#123;
+        &quot;type&quot;: &quot;direct&quot;,
+        &quot;tag&quot;: &quot;direct&quot;
+    &#125;,
+    &#123;
+        &quot;type&quot;: &quot;block&quot;,
+        &quot;tag&quot;: &quot;block&quot;
+    &#125;,
+    &#123;
+        &quot;type&quot;: &quot;dns&quot;,
+        &quot;tag&quot;: &quot;mosdns&quot;
+    &#125;
+],
+&quot;route&quot;: &#123;
+    &quot;geoip&quot;: &#123;
+    &quot;path&quot;: &quot;root/geoip.db&quot;,
+    &quot;download_url&quot;: &quot;https://github.com/SagerNet/sing-geoip/releases/latest/download/geoip.db&quot;,
+    &quot;download_detour&quot;: &quot;proxy&quot;
+    &#125;,
+    &quot;geosite&quot;: &#123;
+    &quot;path&quot;: &quot;root/geosite.db&quot;,
+    &quot;download_url&quot;: &quot;https://github.com/SagerNet/sing-geosite/releases/latest/download/geosite.db&quot;,
+    &quot;download_detour&quot;: &quot;proxy&quot;
+    &#125;,
+    &quot;rules&quot;: [
+    &#123;
+    &quot;inbound&quot;: &quot;dns-in&quot;,
+    &quot;outbound&quot;: &quot;mosdns&quot;
+    &#125;,
+    &#123;
+    &quot;protocol&quot;: &quot;dns&quot;,
+    &quot;outbound&quot;: &quot;mosdns&quot;
+    &#125;,
+    &#123;
+    &quot;network&quot;: &quot;udp&quot;,
+    &quot;port&quot;: 443,
+    &quot;outbound&quot;: &quot;block&quot;
+    &#125;,		
+    &#123;
+    &quot;geosite&quot;: &quot;cn&quot;,
+    &quot;geoip&quot;: [
+      &quot;private&quot;,
+      &quot;cn&quot;
+    ],
+    &quot;outbound&quot;: &quot;direct&quot;
+    &#125;,
+    &#123;
+    &quot;geosite&quot;: &quot;category-ads-all&quot;,
+    &quot;outbound&quot;: &quot;block&quot;
+    &#125;
+],
+    &quot;final&quot;: &quot;proxy&quot;,
+    &quot;auto_detect_interface&quot;: true,
+    &quot;default_mark&quot;: 1
+&#125;,
+&quot;experimental&quot;: &#123;
+&quot;clash_api&quot;: &#123;
+&quot;external_controller&quot;: &quot;0.0.0.0:9090&quot;,
+&quot;store_selected&quot;: true
+   &#125;
+ &#125;
+&#125;
+</code></pre>
+</blockquote>
+<p>sudo nano &#x2F;etc&#x2F;sysctl.conf（ 优先改动下面这个）</p>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>net.ipv4.ip_forward&#x3D;1<br>sysctl –system</p>
+</blockquote>
+<p><strong>ubuntu open port 53</strong></p>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>sudo lsof -i :53<br>nano &#x2F;etc&#x2F;systemd&#x2F;resolved.conf</p>
+</blockquote>
+<ul>
+<li>&#x2F; DNSStubListener&#x3D;no</li>
+</ul>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>sudo systemctl reload-or-restart systemd-resolved</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>mkdir -p &#x2F;root&#x2F;hysteria &amp;&amp; openssl ecparam -genkey -name prime256v1 -out &#x2F;root&#x2F;hysteria&#x2F;private.key &amp;&amp; openssl req -new -x509 -days 36500 -key &#x2F;root&#x2F;hysteria&#x2F;private.key -out &#x2F;root&#x2F;hysteria&#x2F;cert.pem -subj “&#x2F;CN&#x3D;bing.com”</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>systemctl enable –now sing-box<br>systemctl status sing-box</p>
+</blockquote>
+<p><strong>tproxy nftables :</strong></p>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>sudo touch &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;singbox-route.service<br>sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;singbox-route.service</p>
+</blockquote>
+<p>粘贴下面内容</p>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>[Unit]<br>Description&#x3D;sing-box TProxy Rules<br>After&#x3D;network.target<br>Wants&#x3D;network.target</p>
+<blockquote>
+</blockquote>
+<p>[Service]<br>User&#x3D;root<br>Type&#x3D;oneshot<br>RemainAfterExit&#x3D;yes<br>#there must be spaces before and after semicolons<br>ExecStart&#x3D;&#x2F;sbin&#x2F;ip rule add fwmark 1 table 100 ; &#x2F;sbin&#x2F;ip route add local default dev lo table 100 ; &#x2F;sbin&#x2F;ip -6 rule add fwmark 1 table 101 ; &#x2F;sbin&#x2F;ip -6 route add local ::&#x2F;0 dev lo table 101<br>ExecStop&#x3D;&#x2F;sbin&#x2F;ip rule del fwmark 1 table 100 ; &#x2F;sbin&#x2F;ip route del local default dev lo table 100 ; &#x2F;sbin&#x2F;ip -6 rule del fwmark 1 table 101 ; &#x2F;sbin&#x2F;ip -6 route del local ::&#x2F;0 dev lo table 101</p>
+<blockquote>
+</blockquote>
+<p>[Install]<br>WantedBy&#x3D;multi-user.target</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>systemctl enable –now singbox-route</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>nano &#x2F;etc&#x2F;nftables.conf</p>
+</blockquote>
+<p>粘贴下面内容：</p>
+<blockquote>
+<blockquote>
+</blockquote>
+<pre><code>table inet singbox &#123;
+    set local_ipv4 &#123;
+        type ipv4_addr
+        flags interval
+        elements = &#123;
+            10.0.0.0/8,
+            127.0.0.0/8,
+            169.254.0.0/16,
+            172.16.0.0/12,
+            192.168.0.0/16,
+            240.0.0.0/4
+        &#125;
+    &#125;
+</code></pre>
+<blockquote>
+</blockquote>
+<pre><code>set local_ipv6 &#123;
+    type ipv6_addr
+    flags interval
+    elements = &#123;
+        ::ffff:0.0.0.0/96,
+        64:ff9b::/96,
+        100::/64,
+        2001::/32,
+        2001:10::/28,
+        2001:20::/28,
+        2001:db8::/32,
+        2002::/16,
+        fc00::/7,
+        fe80::/10
+    &#125;
+&#125;
+</code></pre>
+<blockquote>
+</blockquote>
+<pre><code>chain singbox-tproxy &#123;
+    fib daddr type &#123; unspec, local, anycast, multicast &#125; return
+    ip daddr @local_ipv4 return
+    ip6 daddr @local_ipv6 return
+    udp dport &#123; 123 &#125; return
+    meta l4proto &#123; tcp, udp &#125; meta mark set 1 tproxy to :7896 accept
+&#125;
+</code></pre>
+<blockquote>
+</blockquote>
+<pre><code>chain singbox-mark &#123;
+    fib daddr type &#123; unspec, local, anycast, multicast &#125; return
+    ip daddr @local_ipv4 return
+    ip6 daddr @local_ipv6 return
+    udp dport &#123; 123 &#125; return
+    meta mark set 1
+&#125;
+</code></pre>
+<blockquote>
+</blockquote>
+<pre><code>chain mangle-output &#123;
+    type route hook output priority mangle; policy accept;
+    meta l4proto &#123; tcp, udp &#125; skgid != 1 ct direction original goto singbox-mark
+&#125;
+</code></pre>
+<blockquote>
+</blockquote>
+<pre><code>chain mangle-prerouting &#123;
+    type filter hook prerouting priority mangle; policy accept;
+    iifname &#123; wg0, lo, ens18 &#125; meta l4proto &#123; tcp, udp &#125; ct direction original goto singbox-tproxy
+&#125;
+</code></pre>
+<p>}<br>table ip wg2nat {<br>    chain PREROUTING {<br>        type nat hook prerouting priority dstnat; policy accept;<br>    }</p>
+<pre><code>chain INPUT &#123;
+    type nat hook input priority 100; policy accept;
+&#125;
+
+chain OUTPUT &#123;
+    type nat hook output priority -100; policy accept;
+&#125;
+
+chain POSTROUTING &#123;
+    type nat hook postrouting priority srcnat; policy accept;
+    oifname &quot;ens18&quot; ip saddr 10.7.0.0/24 masquerade comment &quot;wireguard-nat-rule&quot;
+&#125;
+</code></pre>
+<p>}</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>nft flush ruleset<br>nft -f &#x2F;etc&#x2F;nftables.conf<br>nft list ruleset<br>systemctl enable –now nftables</p>
+</blockquote>
+<p><em>修改后：</em> </p>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>systemctl restart nftables</p>
+<blockquote>
+</blockquote>
+<p>reboot</p>
+</blockquote>
+<p><strong>WG 的安装：</strong></p>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>wget git.io&#x2F;wireguard -O wireguard-install.sh &amp;&amp; bash wireguard-install.sh</p>
+</blockquote>
+<p><em>下面10.7.0.0 是WG 网段， 要替换自己的， 下面的10.0.0.218 是我的SINGBOX VM IP ， 还有51820 端口，都要替换自己的</em><br>sudo touch &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;wg-route.service<br>sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;wg-route.service</p>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>[Unit]<br>Before&#x3D;network.target<br>[Service]<br>Type&#x3D;oneshot<br>ExecStart&#x3D;&#x2F;usr&#x2F;sbin&#x2F;nft add rule ip nat POSTROUTING ip saddr 10.7.0.0&#x2F;24 oifname !&#x3D; lo snat 10.0.0.218<br>ExecStart&#x3D;&#x2F;usr&#x2F;sbin&#x2F;nft add rule ip filter INPUT udp dport 51820 counter accept<br>ExecStart&#x3D;&#x2F;usr&#x2F;sbin&#x2F;nft add rule ip filter FORWARD ip saddr 10.7.0.0&#x2F;24 counter accept<br>ExecStart&#x3D;&#x2F;usr&#x2F;sbin&#x2F;nft add rule ip filter FORWARD ct state related,established counter accept<br>ExecStop&#x3D;&#x2F;usr&#x2F;sbin&#x2F;nft delete rule ip nat POSTROUTING ip saddr 10.7.0.0&#x2F;24 oifname !&#x3D; lo snat 10.0.0.218<br>ExecStop&#x3D;&#x2F;usr&#x2F;sbin&#x2F;nft delete rule ip filter INPUT udp dport 51820 counter accept<br>ExecStop&#x3D;&#x2F;usr&#x2F;sbin&#x2F;nft delete rule ip filter FORWARD ip saddr 10.7.0.0&#x2F;24 counter accept<br>ExecStop&#x3D;&#x2F;usr&#x2F;sbin&#x2F;nft delete rule ip filter FORWARD ct state related,established counter accept<br>RemainAfterExit&#x3D;yes<br>[Install]<br>WantedBy&#x3D;multi-user.target</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>systemctl enable –now wg-route</p>
+<blockquote>
+</blockquote>
+<p>reboot</p>
+</blockquote>
+<span id="more"></span></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.digs.eu.org">Jason M</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.digs.eu.org/2024/01/03/ubuntu%E5%AE%89%E8%A3%85tproxy%20singbox%E5%B9%B6%E5%AE%89%E8%A3%85WG%E5%9B%9E%E5%AE%B6/">https://www.digs.eu.org/2024/01/03/ubuntu%E5%AE%89%E8%A3%85tproxy%20singbox%E5%B9%B6%E5%AE%89%E8%A3%85WG%E5%9B%9E%E5%AE%B6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.digs.eu.org" target="_blank">搜寻完美</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Proxy/">Proxy</a><a class="post-meta__tags" href="/tags/Sing-Box/">Sing-Box</a></div><div class="post_share"><div class="social-share" data-image="https://img2.imgtp.com/2024/01/21/Z0SxNu9U.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/01/03/%E6%89%8B%E5%8A%A8%E4%BD%BF%E7%94%A8Acme.sh%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC%E7%94%B3%E8%AF%B7SSL%E8%AF%81%E4%B9%A6/" title="手动使用Acme.sh证书脚本申请SSL证书"><img class="cover" src="https://img2.imgtp.com/2024/01/21/qHnU468i.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">手动使用Acme.sh证书脚本申请SSL证书</div></div></a></div><div class="next-post pull-right"><a href="/2024/01/03/PVE%E5%AE%89%E8%A3%85lxc%20AdGuardHome/" title="PVE安装lxc AdGuardHome"><img class="cover" src="https://img2.imgtp.com/2024/01/21/6TJB0Vsz.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">PVE安装lxc AdGuardHome</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/01/03/Ubuntu%20VM%E5%AE%89%E8%A3%85sing-box%20tun/" title="Ubuntu VM安装sing-box tun"><img class="cover" src="https://img2.imgtp.com/2024/01/21/Z0SxNu9U.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-03</div><div class="title">Ubuntu VM安装sing-box tun</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://img2.imgtp.com/2024/01/21/TDyQEszh.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jason M</div><div class="author-info__description">用我三生烟火，换你一世迷离</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">全球互联网网速遥遥领先的大卫电信10005号客服ovpavac大佬服务细致周到，5分好评！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/02/17/RackNerd%E6%B5%81%E9%87%8F%E7%BF%BB%E5%80%8D%E6%95%99%E7%A8%8B/" title="RackNerd流量翻倍教程"><img src="https://img2.imgtp.com/2024/01/21/Z0SxNu9U.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RackNerd流量翻倍教程"/></a><div class="content"><a class="title" href="/2024/02/17/RackNerd%E6%B5%81%E9%87%8F%E7%BF%BB%E5%80%8D%E6%95%99%E7%A8%8B/" title="RackNerd流量翻倍教程">RackNerd流量翻倍教程</a><time datetime="2024-02-17T04:20:00.000Z" title="发表于 2024-02-17 12:20:00">2024-02-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/21/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7%E7%A5%9E%E5%99%A8-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/" title="服务器监控神器-哪吒探针安装步骤"><img src="https://img2.imgtp.com/2024/01/21/6TJB0Vsz.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="服务器监控神器-哪吒探针安装步骤"/></a><div class="content"><a class="title" href="/2024/01/21/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7%E7%A5%9E%E5%99%A8-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/" title="服务器监控神器-哪吒探针安装步骤">服务器监控神器-哪吒探针安装步骤</a><time datetime="2024-01-21T02:20:10.000Z" title="发表于 2024-01-21 10:20:10">2024-01-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/16/ROS%E5%9F%BA%E7%A1%80%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99/" title="ROS系统基础防火墙规则"><img src="https://img2.imgtp.com/2024/01/21/65B49pt5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ROS系统基础防火墙规则"/></a><div class="content"><a class="title" href="/2024/01/16/ROS%E5%9F%BA%E7%A1%80%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99/" title="ROS系统基础防火墙规则">ROS系统基础防火墙规则</a><time datetime="2024-01-16T06:34:10.000Z" title="发表于 2024-01-16 14:34:10">2024-01-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/14/ROS%E5%9F%BA%E7%A1%80%E4%B8%8A%E7%BD%91%E9%85%8D%E7%BD%AE/" title="ROS系统基础上网配置"><img src="https://img2.imgtp.com/2024/01/21/a52TIZbA.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ROS系统基础上网配置"/></a><div class="content"><a class="title" href="/2024/01/14/ROS%E5%9F%BA%E7%A1%80%E4%B8%8A%E7%BD%91%E9%85%8D%E7%BD%AE/" title="ROS系统基础上网配置">ROS系统基础上网配置</a><time datetime="2024-01-14T09:22:10.000Z" title="发表于 2024-01-14 17:22:10">2024-01-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/09/Docker%E5%AE%89%E8%A3%85heimdall%E5%AF%BC%E8%88%AA%E9%A1%B5/" title="Docker安装heimdall导航页"><img src="https://img2.imgtp.com/2024/01/21/6TJB0Vsz.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker安装heimdall导航页"/></a><div class="content"><a class="title" href="/2024/01/09/Docker%E5%AE%89%E8%A3%85heimdall%E5%AF%BC%E8%88%AA%E9%A1%B5/" title="Docker安装heimdall导航页">Docker安装heimdall导航页</a><time datetime="2024-01-09T07:20:10.000Z" title="发表于 2024-01-09 15:20:10">2024-01-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://img2.imgtp.com/2024/01/21/Z0SxNu9U.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Jason M</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
