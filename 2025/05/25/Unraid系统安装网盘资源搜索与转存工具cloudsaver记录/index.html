@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Unraid系统安装网盘资源搜索与转存工具cloudsaver记录 | 搜寻完美</title><meta name="author" content="Jason M"><meta name="copyright" content="Jason M"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="介绍CloudSaver 是一个基于 Vue 3 + Express 的网盘资源搜索与转存工具，支持响应式布局，移动端与 PC 完美适配，可通过 Docker 一键部署。 功能特性🔍 多源资源搜索支持多个资源订阅源搜索支持关键词搜索与资源链接解析支持豆瓣热门榜单展示💾 网盘资源转存支持 115 网盘，夸克网盘，天翼网盘 一键转存支持转存文件夹展示与选择👥 多用户系统支持用户注册登录支持管理员">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unraid系统安装网盘资源搜索与转存工具cloudsaver记录">
+<meta property="og:url" content="https://www.digs.eu.org/2025/05/25/Unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E4%B8%8E%E8%BD%AC%E5%AD%98%E5%B7%A5%E5%85%B7cloudsaver%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="搜寻完美">
+<meta property="og:description" content="介绍CloudSaver 是一个基于 Vue 3 + Express 的网盘资源搜索与转存工具，支持响应式布局，移动端与 PC 完美适配，可通过 Docker 一键部署。 功能特性🔍 多源资源搜索支持多个资源订阅源搜索支持关键词搜索与资源链接解析支持豆瓣热门榜单展示💾 网盘资源转存支持 115 网盘，夸克网盘，天翼网盘 一键转存支持转存文件夹展示与选择👥 多用户系统支持用户注册登录支持管理员">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i2.mjj.rip/2024/06/03/b977aff23651a07829e81837e1b1bfbf.jpeg">
+<meta property="article:published_time" content="2025-05-25T02:22:10.000Z">
+<meta property="article:modified_time" content="2025-05-25T02:31:21.125Z">
+<meta property="article:author" content="Jason M">
+<meta property="article:tag" content="Unraid">
+<meta property="article:tag" content="Cloudsaver">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i2.mjj.rip/2024/06/03/b977aff23651a07829e81837e1b1bfbf.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.digs.eu.org/2025/05/25/Unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E4%B8%8E%E8%BD%AC%E5%AD%98%E5%B7%A5%E5%85%B7cloudsaver%E8%AE%B0%E5%BD%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Unraid系统安装网盘资源搜索与转存工具cloudsaver记录',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-05-25 10:31:21'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://img.picui.cn/free/2024/06/03/665d18b4cb753.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 博文</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i2.mjj.rip/2024/06/03/b977aff23651a07829e81837e1b1bfbf.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="搜寻完美"><span class="site-name">搜寻完美</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 博文</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Unraid系统安装网盘资源搜索与转存工具cloudsaver记录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-05-25T02:22:10.000Z" title="发表于 2025-05-25 10:22:10">2025-05-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-05-25T02:31:21.125Z" title="更新于 2025-05-25 10:31:21">2025-05-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Diary/">Diary</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Unraid系统安装网盘资源搜索与转存工具cloudsaver记录"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a class="disqus-comment-count" href="https://www.digs.eu.org/2025/05/25/Unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E4%B8%8E%E8%BD%AC%E5%AD%98%E5%B7%A5%E5%85%B7cloudsaver%E8%AE%B0%E5%BD%95/#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>CloudSaver 是一个基于 Vue 3 + Express 的网盘资源搜索与转存工具，支持响应式布局，移动端与 PC 完美适配，可通过 Docker 一键部署。</p>
+<p>功能特性<br>🔍 多源资源搜索<br>支持多个资源订阅源搜索<br>支持关键词搜索与资源链接解析<br>支持豆瓣热门榜单展示<br>💾 网盘资源转存<br>支持 115 网盘，夸克网盘，天翼网盘 一键转存<br>支持转存文件夹展示与选择<br>👥 多用户系统<br>支持用户注册登录<br>支持管理员与普通用户权限区分<br>📱 响应式设计<br>支持 PC 端与移动端自适应布局<br>针对不同设备优化的交互体验</p>
+<p>CloudSaver 是一个专注于网盘资源管理的工具，旨在为用户提供安全、高效的资源搜索与转存体验。开箱即用的网盘资源转存平台。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>打开unraid系统的命令行,新建文件夹 cloudsaver 和 子目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /mnt/user/appdata/cloudsaver/&#123;config,data&#125;</span><br></pre></td></tr></table></figure>
+
+<p>进入 cloudsaver 目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /mnt/user/appdata/cloudsaver</span><br></pre></td></tr></table></figure>
+
+<p>将下面的内容保存为 docker-compose.yml 文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  cloudsaver:</span><br><span class="line">    image: jiangrui1994/cloudsaver:latest</span><br><span class="line">    container_name: cloud-saver</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;8008:8008&quot;</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/app/data</span><br><span class="line">      - ./config:/app/config</span><br></pre></td></tr></table></figure>
+
+<p>将 docker-compose.yml 放入当前目录（通过SSH工具或网络共享方式都可以）</p>
+<p>一键启动cloudsaver</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>在浏览器中输入 <a target="_blank" rel="noopener" href="http://unraid系统ip:8008/">http://unraid系统IP:8008</a> 就能看到登录界面</p>
+<p>第一次需要注册用户</p>
+<p>默认注册码：</p>
+<p>管理员：230713<br>普通用户：9527</p>
+<h3 id="资源转存"><a href="#资源转存" class="headerlink" title="资源转存"></a>资源转存</h3><p>资源转存需要有自己的云盘，目前支持 115网盘、夸克网盘 和 天翼云盘</p>
+<p>Cookie<br>按F12打开“调试”，选中“网络”，随意在左侧选择请求，找到携带 Cookie 参数的就可以</p>
+<h3 id="添加搜索源"><a href="#添加搜索源" class="headerlink" title="添加搜索源"></a>添加搜索源</h3><p>设置页面，可直接批量导入的频道配置：批量添加成功后，可自己在设置里面拖动排序或者选择性的禁用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;guaguale115&quot;,&quot;name&quot;:&quot;115影视资源分享频道&quot;&#125;,&#123;&quot;id&quot;:&quot;hao115&quot;,&quot;name&quot;:&quot;115网盘资源分享频道&quot;&#125;,&#123;&quot;id&quot;:&quot;yunpanshare&quot;,&quot;name&quot;:&quot;网盘资源收藏（夸克）&quot;&#125;,&#123;&quot;id&quot;:&quot;alyp_1&quot;,&quot;name&quot;:&quot;网盘(高品质)影视&quot;&#125;,&#123;&quot;id&quot;:&quot;shareAliyun&quot;,&quot;name&quot;:&quot;阿里云盘发布频道&quot;&#125;,&#123;&quot;id&quot;:&quot;XiangxiuNB&quot;,&quot;name&quot;:&quot;肯德基の4K影视综合电影云盘站&quot;&#125;,&#123;&quot;id&quot;:&quot;Quark_Movies&quot;,&quot;name&quot;:&quot;夸克云盘综合资源&quot;&#125;,&#123;&quot;id&quot;:&quot;Aliyun_4K_Movies&quot;,&quot;name&quot;:&quot;阿里云盘4K影视&quot;&#125;,&#123;&quot;id&quot;:&quot;zaihuayun&quot;,&quot;name&quot;:&quot;阿里云盘资源&quot;&#125;,&#123;&quot;id&quot;:&quot;tgsearchers&quot;,&quot;name&quot;:&quot;资源宇宙&quot;&#125;,&#123;&quot;id&quot;:&quot;pan115_share&quot;,&quot;name&quot;:&quot;爱影115资源分享频道&quot;&#125;,&#123;&quot;id&quot;:&quot;PanjClub&quot;,&quot;name&quot;:&quot;盘酱酱Club&quot;&#125;,&#123;&quot;id&quot;:&quot;tianyirigeng&quot;,&quot;name&quot;:&quot;天翼云盘资源频道&quot;&#125;,&#123;&quot;id&quot;:&quot;xx123pan&quot;,&quot;name&quot;:&quot;123云盘资源频道&quot;&#125;,&#123;&quot;id&quot;:&quot;zyzhpd123&quot;,&quot;name&quot;:&quot;123云盘综合频道&quot;&#125;,&#123;&quot;id&quot;:&quot;cloudtianyi&quot;,&quot;name&quot;:&quot;天翼云盘资源发布频道&quot;&#125;,&#123;&quot;id&quot;:&quot;tyypzhpd&quot;,&quot;name&quot;:&quot;天翼云盘综合频道&quot;&#125;,&#123;&quot;id&quot;:&quot;Oscar_4Kmovies&quot;,&quot;name&quot;:&quot;奥斯卡4K蓝光（精品）影视磁力站&quot;&#125;,&#123;&quot;id&quot;:&quot;ydypzyfx&quot;,&quot;name&quot;:&quot;移动云盘资源分享&quot;&#125;,&#123;&quot;id&quot;:&quot;bdwpzhpd&quot;,&quot;name&quot;:&quot;百度网盘综合频道&quot;&#125;,&#123;&quot;id&quot;:&quot;yunpanall&quot;,&quot;name&quot;:&quot;综合频道&quot;&#125;,&#123;&quot;id&quot;:&quot;NewQuark&quot;,&quot;name&quot;:&quot;夸克浏览器二三事&quot;&#125;,&#123;&quot;id&quot;:&quot;NewAliPan&quot;,&quot;name&quot;:&quot;阿里云盘吧（新）&quot;&#125;,&#123;&quot;id&quot;:&quot;Q66share&quot;,&quot;name&quot;:&quot;阿里云盘吧&quot;&#125;,&#123;&quot;id&quot;:&quot;BaiduCloudDisk&quot;,&quot;name&quot;:&quot;百度网盘资源分享&quot;&#125;,&#123;&quot;id&quot;:&quot;yunpan139&quot;,&quot;name&quot;:&quot;网盘资源收藏（移动云盘）&quot;&#125;,&#123;&quot;id&quot;:&quot;yunpanuc&quot;,&quot;name&quot;:&quot;网盘资源收藏（UC网盘）&quot;&#125;,&#123;&quot;id&quot;:&quot;yunpanpan&quot;,&quot;name&quot;:&quot;云盘盘&quot;&#125;,&#123;&quot;id&quot;:&quot;qixingzhenren&quot;,&quot;name&quot;:&quot;云盘资源发布频道&quot;&#125;,&#123;&quot;id&quot;:&quot;pankuake_share&quot;,&quot;name&quot;:&quot;爱影夸克频道&quot;&#125;,&#123;&quot;id&quot;:&quot;duanjucabian&quot;,&quot;name&quot;:&quot;热门短剧/擦边短剧/精选短剧/在线预览&quot;&#125;,&#123;&quot;id&quot;:&quot;yoyokuakeduanju&quot;,&quot;name&quot;:&quot;YOYO资源|夸克|短剧&quot;&#125;,&#123;&quot;id&quot;:&quot;Channel_Shares_115&quot;,&quot;name&quot;:&quot;Shares_115_Channel&quot;&#125;,&#123;&quot;id&quot;:&quot;yeqingjie_GJG666&quot;,&quot;name&quot;:&quot;爷青回动画分享&quot;&#125;,&#123;&quot;id&quot;:&quot;gotopan&quot;,&quot;name&quot;:&quot;迅雷云盘&quot;&#125;,&#123;&quot;id&quot;:&quot;oneonefivewpfx&quot;,&quot;name&quot;:&quot;影巢&quot;&#125;,&#123;&quot;id&quot;:&quot;xxziliao&quot;,&quot;name&quot;:&quot;学习频道&quot;&#125;,&#123;&quot;id&quot;:&quot;sndkdkdl&quot;,&quot;name&quot;:&quot;学习频道2&quot;&#125;,&#123;&quot;id&quot;:&quot;hsndn1&quot;,&quot;name&quot;:&quot;学习频道3&quot;&#125;,&#123;&quot;id&quot;:&quot;xuexixiaonengshou1&quot;,&quot;name&quot;:&quot;学习频道4&quot;&#125;,&#123;&quot;name&quot;:&quot;帧影时光&quot;,&quot;id&quot;:&quot;zhenyingsg&quot;&#125;,&#123;&quot;name&quot;:&quot;【热门网剧在线】&quot;,&quot;id&quot;:&quot;movielover8888_TV&quot;&#125;,&#123;&quot;name&quot;:&quot;全网擦边｜电影｜资源分享&quot;,&quot;id&quot;:&quot;CBduanju&quot;&#125;,&#123;&quot;name&quot;:&quot;UC夸克百度迅雷资源分享&quot;,&quot;id&quot;:&quot;ucquark&quot;&#125;,&#123;&quot;name&quot;:&quot;短剧大全资源&quot;,&quot;id&quot;:&quot;weichengduanju666&quot;&#125;,&#123;&quot;name&quot;:&quot;影享空间&quot;,&quot;id&quot;:&quot;yingxiangkj&quot;&#125;,&#123;&quot;name&quot;:&quot;阿里、夸克、百度等网盘4K影视资源&quot;,&quot;id&quot;:&quot;Aliyun_4K_Movies&quot;&#125;,&#123;&quot;id&quot;:&quot;alyp_Animation&quot;,&quot;name&quot;:&quot;网盘资源(动画/动漫)频道&quot;&#125;]</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.digs.eu.org">Jason M</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.digs.eu.org/2025/05/25/Unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E4%B8%8E%E8%BD%AC%E5%AD%98%E5%B7%A5%E5%85%B7cloudsaver%E8%AE%B0%E5%BD%95/">https://www.digs.eu.org/2025/05/25/Unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E4%B8%8E%E8%BD%AC%E5%AD%98%E5%B7%A5%E5%85%B7cloudsaver%E8%AE%B0%E5%BD%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.digs.eu.org" target="_blank">搜寻完美</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Unraid/">Unraid</a><a class="post-meta__tags" href="/tags/Cloudsaver/">Cloudsaver</a></div><div class="post_share"><div class="social-share" data-image="https://i2.mjj.rip/2024/06/03/b977aff23651a07829e81837e1b1bfbf.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/05/19/unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85immich%E6%95%99%E7%A8%8B/" title="unraid系统安装immich教程"><img class="cover" src="https://i2.mjj.rip/2024/06/03/f8cc3ec5ed63f39b9842c0294c809556.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">unraid系统安装immich教程</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://img.picui.cn/free/2024/06/03/665d18b4cb753.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jason M</div><div class="author-info__description">用我三生烟火，换你一世迷离</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">全球互联网网速遥遥领先的大卫电信10005号客服ovpavac大佬服务细致周到，5分好评！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C"><span class="toc-number">3.</span> <span class="toc-text">运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E8%BD%AC%E5%AD%98"><span class="toc-number">4.</span> <span class="toc-text">资源转存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E6%BA%90"><span class="toc-number">5.</span> <span class="toc-text">添加搜索源</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/05/25/Unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E4%B8%8E%E8%BD%AC%E5%AD%98%E5%B7%A5%E5%85%B7cloudsaver%E8%AE%B0%E5%BD%95/" title="Unraid系统安装网盘资源搜索与转存工具cloudsaver记录"><img src="https://i2.mjj.rip/2024/06/03/b977aff23651a07829e81837e1b1bfbf.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unraid系统安装网盘资源搜索与转存工具cloudsaver记录"/></a><div class="content"><a class="title" href="/2025/05/25/Unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E4%B8%8E%E8%BD%AC%E5%AD%98%E5%B7%A5%E5%85%B7cloudsaver%E8%AE%B0%E5%BD%95/" title="Unraid系统安装网盘资源搜索与转存工具cloudsaver记录">Unraid系统安装网盘资源搜索与转存工具cloudsaver记录</a><time datetime="2025-05-25T02:22:10.000Z" title="发表于 2025-05-25 10:22:10">2025-05-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/19/unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85immich%E6%95%99%E7%A8%8B/" title="unraid系统安装immich教程"><img src="https://i2.mjj.rip/2024/06/03/f8cc3ec5ed63f39b9842c0294c809556.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="unraid系统安装immich教程"/></a><div class="content"><a class="title" href="/2025/05/19/unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85immich%E6%95%99%E7%A8%8B/" title="unraid系统安装immich教程">unraid系统安装immich教程</a><time datetime="2025-05-19T12:07:10.000Z" title="发表于 2025-05-19 20:07:10">2025-05-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/18/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B0%8F%E8%AF%B4%E7%BD%91%E7%AB%99/" title="如何搭建一个小说网站"><img src="https://i2.mjj.rip/2024/06/03/b977aff23651a07829e81837e1b1bfbf.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何搭建一个小说网站"/></a><div class="content"><a class="title" href="/2025/05/18/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B0%8F%E8%AF%B4%E7%BD%91%E7%AB%99/" title="如何搭建一个小说网站">如何搭建一个小说网站</a><time datetime="2025-05-18T06:07:10.000Z" title="发表于 2025-05-18 14:07:10">2025-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/18/Apline%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%9D%A2%E6%9D%BF/" title="IPV6小机Apline系统搭建哪吒探针V1面板"><img src="https://i2.mjj.rip/2024/06/03/badec63bdfe0a1d03a937901b811cc3c.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IPV6小机Apline系统搭建哪吒探针V1面板"/></a><div class="content"><a class="title" href="/2025/05/18/Apline%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%9D%A2%E6%9D%BF/" title="IPV6小机Apline系统搭建哪吒探针V1面板">IPV6小机Apline系统搭建哪吒探针V1面板</a><time datetime="2025-05-18T00:42:10.000Z" title="发表于 2025-05-18 08:42:10">2025-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/13/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" title="docker常用命令大全"><img src="https://i2.mjj.rip/2024/06/03/454e07a3be0da901465f8f6e9d6846da.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="docker常用命令大全"/></a><div class="content"><a class="title" href="/2024/11/13/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" title="docker常用命令大全">docker常用命令大全</a><time datetime="2024-11-13T12:34:10.000Z" title="发表于 2024-11-13 20:34:10">2024-11-13</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://i2.mjj.rip/2024/06/03/b977aff23651a07829e81837e1b1bfbf.jpeg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Jason M</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const disqus_config = function () {
+    this.page.url = 'https://www.digs.eu.org/2025/05/25/Unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E4%B8%8E%E8%BD%AC%E5%AD%98%E5%B7%A5%E5%85%B7cloudsaver%E8%AE%B0%E5%BD%95/'
+    this.page.identifier = '/2025/05/25/Unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E4%B8%8E%E8%BD%AC%E5%AD%98%E5%B7%A5%E5%85%B7cloudsaver%E8%AE%B0%E5%BD%95/'
+    this.page.title = 'Unraid系统安装网盘资源搜索与转存工具cloudsaver记录'
+  }
+
+  const disqusReset = () => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addGlobalFn('themeChange', disqusReset, 'disqus')
+
+  const loadDisqus = () =>{
+    if (window.DISQUS) disqusReset()
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://sou-xun-wan-mei.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=sou-xun-wan-mei&api_key=For newest comments widget&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.isPost && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
