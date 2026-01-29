@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Vertex刷流安装过程 | 搜寻完美</title><meta name="author" content="Jason M"><meta name="copyright" content="Jason M"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="摘自https:&#x2F;&#x2F;www.lincol29.cn&#x2F;vertex-pt 这期教程，主要来介绍 PT 全自动刷流的方法,通过在服务器上安装 Vertex 和 Qbit 来进行刷流。不仅可以自动筛选 HR、降速后自动删种，还可以实时跟踪站点最新发布的种子。 安装 VertexVertex 项目长期维护，官方 Wiki 提供了一键安装脚本，非常便捷。 一键安装命令：12345678910apt upda">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vertex刷流安装过程">
+<meta property="og:url" content="https://www.digs.eu.org/2026/01/29/%E5%AE%89%E8%A3%85Vertex%E5%88%B7%E6%B5%81/index.html">
+<meta property="og:site_name" content="搜寻完美">
+<meta property="og:description" content="摘自https:&#x2F;&#x2F;www.lincol29.cn&#x2F;vertex-pt 这期教程，主要来介绍 PT 全自动刷流的方法,通过在服务器上安装 Vertex 和 Qbit 来进行刷流。不仅可以自动筛选 HR、降速后自动删种，还可以实时跟踪站点最新发布的种子。 安装 VertexVertex 项目长期维护，官方 Wiki 提供了一键安装脚本，非常便捷。 一键安装命令：12345678910apt upda">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img2.imgtp.com/2024/01/21/qHnU468i.jpg">
+<meta property="article:published_time" content="2026-01-29T08:25:10.000Z">
+<meta property="article:modified_time" content="2026-01-29T08:59:16.353Z">
+<meta property="article:author" content="Jason M">
+<meta property="article:tag" content="Diary">
+<meta property="article:tag" content="Vertex">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2.imgtp.com/2024/01/21/qHnU468i.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.digs.eu.org/2026/01/29/%E5%AE%89%E8%A3%85Vertex%E5%88%B7%E6%B5%81/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Vertex刷流安装过程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-01-29 16:59:16'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://img.picui.cn/free/2024/06/03/665d18b4cb753.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 博文</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img2.imgtp.com/2024/01/21/qHnU468i.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="搜寻完美"><span class="site-name">搜寻完美</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 博文</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Vertex刷流安装过程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-01-29T08:25:10.000Z" title="发表于 2026-01-29 16:25:10">2026-01-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-29T08:59:16.353Z" title="更新于 2026-01-29 16:59:16">2026-01-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Diary/">Diary</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Vertex刷流安装过程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a class="disqus-comment-count" href="https://www.digs.eu.org/2026/01/29/%E5%AE%89%E8%A3%85Vertex%E5%88%B7%E6%B5%81/#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>摘自<a target="_blank" rel="noopener" href="https://www.lincol29.cn/vertex-pt">https://www.lincol29.cn/vertex-pt</a></p>
+<p>这期教程，主要来介绍 PT 全自动刷流的方法,通过在服务器上安装 Vertex 和 Qbit 来进行刷流。不仅可以自动筛选 HR、降速后自动删种，还可以实时跟踪站点最新发布的种子。</p>
+<h3 id="安装-Vertex"><a href="#安装-Vertex" class="headerlink" title="安装 Vertex"></a>安装 Vertex</h3><p>Vertex 项目长期维护，官方 Wiki 提供了一键安装脚本，非常便捷。</p>
+<h4 id="一键安装命令："><a href="#一键安装命令：" class="headerlink" title="一键安装命令："></a>一键安装命令：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">apt update -y &amp;&amp; \</span><br><span class="line">apt upgrade -y &amp;&amp; \</span><br><span class="line">apt install apparmor apparmor-utils -y &amp;&amp; \</span><br><span class="line">apt install curl -y &amp;&amp; \</span><br><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh &amp;&amp; \</span><br><span class="line">sh get-docker.sh &amp;&amp; \</span><br><span class="line">timedatectl set-timezone Asia/Shanghai &amp;&amp; \</span><br><span class="line">mkdir -p /root/vertex &amp;&amp; \</span><br><span class="line">chmod 777 /root/vertex &amp;&amp; \</span><br><span class="line">docker run -d --name vertex --restart unless-stopped --network host -v /root/vertex:/vertex -e TZ=Asia/Shanghai lswl/vertex:stable</span><br></pre></td></tr></table></figure>
+<p>提示：<br>如遇 apparmor 相关错误，先执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install apparmor apparmor-utils -y</span><br><span class="line">docker restart vertex</span><br></pre></td></tr></table></figure>
+<p>命令说明：<br>系统环境自动识别：支持 x86_64 &#x2F; AMD64 &#x2F; ARM64 架构，Debian &#x2F; Ubuntu 系统。<br>&amp;&amp;：多命令依次执行，前一条成功才继续下一条。<br>-y：自动确认安装。<br>安装系统更新、curl、Docker、设置时区、创建文件夹、赋权并安装 Vertex。</p>
+<h4 id="登录与密码查看："><a href="#登录与密码查看：" class="headerlink" title="登录与密码查看："></a>登录与密码查看：</h4><p>安装完成后，浏览器访问：</p>
+<p>http:&#x2F;&#x2F;&lt;IP地址&gt;:3000<br>默认用户名：admin</p>
+<p>初始密码查看方法：</p>
+<p>FinalShell 登录主机，进入 &#x2F;root&#x2F;vertex&#x2F;data&#x2F;，双击 password 查看。</p>
+<p>或 SSH 执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more /root/vertex/data/password</span><br></pre></td></tr></table></figure>
+<p>复制密码，登录软件。</p>
+<h3 id="安装-qBittorrent"><a href="#安装-qBittorrent" class="headerlink" title="安装 qBittorrent"></a>安装 qBittorrent</h3><h4 id="安装命令："><a href="#安装命令：" class="headerlink" title="安装命令："></a>安装命令：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install qbittorrent-nox</span><br></pre></td></tr></table></figure>
+<p>启动 qBittorrent：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qbittorrent-nox</span><br></pre></td></tr></table></figure>
+<p>浏览器访问：</p>
+<p>http:&#x2F;&#x2F;&lt;IP地址&gt;:8080<br>默认用户名：admin<br>默认密码：adminadmin</p>
+<h4 id="设置建议："><a href="#设置建议：" class="headerlink" title="设置建议："></a>设置建议：</h4><p>点击设置 → WEB UI<br>修改网页语言<br>修改默认用户名和密码<br>设置默认保存路径，一定要确保路径存在。若不确定，可设为：&#x2F;root</p>
+<h4 id="常见问题及修复："><a href="#常见问题及修复：" class="headerlink" title="常见问题及修复："></a>常见问题及修复：</h4><p>Docker 部署 WebUI 显示 Unauthorize 解决方法：</p>
+<p>在 qBittorrent 映射的 config 目录下，找到配置文件，编辑，在 [Preferences] 下添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">WebUI\HostHeaderValidation=false</span><br><span class="line">WebUI\CSRFProtection=false</span><br></pre></td></tr></table></figure>
+<p>qbit-nox 更新后密码找回方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop qbittorrent.service</span><br><span class="line">nano ~/.config/qBittorrent/qBittorrent.conf</span><br></pre></td></tr></table></figure>
+<p>找到 WebUI\Password，替换为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WebUI\Password_PBKDF2=&quot;@ByteArray(Lt0l8kpiAx/har4H4dbBoaNpMRjiiWLoVr38L6uD5e4E9G+EqzAjn3DPh4R3G8LvUnn3dk+M3Nwz8p6GnfRnfg==:hT1L5bnx8hC4ul4nVpt341Z8W6nBPSNc+WT11jcBFGQ=)&quot;</span><br></pre></td></tr></table></figure>
+<p>保存退出，重启服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start qbittorrent.service</span><br></pre></td></tr></table></figure>
+<p>默认密码恢复为：lincol29</p>
+<p>创建守护进程<br>新建守护进程配置文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/systemd/system/qbittorrent.service</span><br></pre></td></tr></table></figure>
+<p>使用 setpaste 模式粘贴以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=qBittorrent Command Line Client</span><br><span class="line">After=network.target</span><br><span class="line"> </span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/usr/bin/qbittorrent-nox --webui-port=8080</span><br><span class="line">User=root</span><br><span class="line">Restart=on-failure</span><br><span class="line"> </span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>保存退出（CTRL+X → Y → 回车）。</p>
+<p>启动并设置开机自启：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start qbittorrent</span><br><span class="line">sudo systemctl enable qbittorrent</span><br></pre></td></tr></table></figure>
+<p>qbittorrent 客户端未显示种子<br>添加种子后，qbittorrent 客户端未出现种子详情！！！可能是界面未更新，需要删除掉 cookie。然后强制刷新一下 ctrl + F5<br>F12 打开网页开发工具 —— 应用 —— 存储 —— 清除网站数据 (包括第三方 cookie)<br>可以看到已正常显示了。</p>
+<h3 id="初步配置自动刷流规则"><a href="#初步配置自动刷流规则" class="headerlink" title="初步配置自动刷流规则"></a>初步配置自动刷流规则</h3><p>配置删种规则<br>打开刷流软件 → 进入规则组件 – 删种规则<br>新建规则：<br>名称：慢速上传的删除</p>
+<p>持续时间：1200 秒</p>
+<p>限制条件：上传速度小于 0.5 MB&#x2F;s &amp; 硬盘剩余空间小于 20GB</p>
+<p>点击应用</p>
+<p>配置 RSS 规则<br>打开刷流软件 → 进入规则组件 – RSS 规则<br>新建规则：<br>名称：选取2&lt;x&lt;65</p>
+<p>类型：普通</p>
+<p>限制条件：种子大于 2GB 小于 65GB (根据自身 VPS 的硬盘配置)</p>
+<p>点击应用<br>此 RSS 规则会在后面的 RSS 任务中使用到！选种规则不适用于 RSS 任务。</p>
+<p>添加下载器<br>点击基础组件 – 下载器</p>
+<p>配置参数：</p>
+<p>名称：任意</p>
+<p>类型：Qbit</p>
+<p>用户名 &#x2F; 密码：填写 qBittorrent 登录信息</p>
+<p>URL：http:&#x2F;&#x2F;&lt;IP地址&gt;:8080</p>
+<p>最小剩余空间：2G(可自行修改)</p>
+<p>勾选删种规则</p>
+<p>点击应用<br>添加站点测试<br>点击任务配置 – RSS 任务<br>配置任务：<br>别名：任意</p>
+<p>下载器：选择 Qbit</p>
+<p>RSS 列表：填写站点 RSS 地址</p>
+<p>限制上传 &#x2F; 下载速度：按站点规则填写（如 50 MB&#x2F;s，一般是限制总速度）</p>
+<p>点击确定，保存任务。<br>规则推荐<br>目前这套规则是 根据 lincol 自己的 VPS 适配的，非常简单。完全不需要你去使用 javascript。</p>
+<p>列出我的机器配置：4C4G80G 20T 流量 HK 机</p>
+<p>下载器配置推荐<br>基础组件 —— 下载器，此为我的配置。根据速度和硬盘实时更新</p>
+<p>RSS 规则推荐<br>这里我将下载的种子选择控制在 35G 以下，太大的包硬盘不够用。如果你是大盘鸡可扩大</p>
+<p>删种规则推荐 (重头戏)<br>删种规则决定了你的配置是否 符合站点和 VPS。配置的好上传流量自然多。重点关注</p>
+<p>先列出四个删种规则</p>
+<p>1、一直没下载的删除 持续时间：2800</p>
+<p>种子进度 &lt; 1<br>下载速度 &lt; 0.3*1024*1024<br>下载任务 &gt; 2<br>做种任务 &gt; 1<br>2、下载人数不够的删除 持续时间：60</p>
+<p>下载连接 &lt; 3<br>3、空间不够则删除种子 持续时间：15 单次删种数量：2</p>
+<p>剩余空间 &lt; 15<em>1024</em>1024<br>4、慢速上传的删除 持续时间：3000</p>
+<p>上传速度 &lt; 0.4<em>1024</em>1024</p>
+<p>总结</p>
+<p>可以在 任务历史 ——RSS 历史 中找到最近是否添加种子，拒绝种子的日志。</p>
+<p>当站点发布新种子时，软件会自动将其推送至 Qbit 进行下载。</p>
+<span id="more"></span></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.digs.eu.org">Jason M</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.digs.eu.org/2026/01/29/%E5%AE%89%E8%A3%85Vertex%E5%88%B7%E6%B5%81/">https://www.digs.eu.org/2026/01/29/%E5%AE%89%E8%A3%85Vertex%E5%88%B7%E6%B5%81/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.digs.eu.org" target="_blank">搜寻完美</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Diary/">Diary</a><a class="post-meta__tags" href="/tags/Vertex/">Vertex</a></div><div class="post_share"><div class="social-share" data-image="https://img2.imgtp.com/2024/01/21/qHnU468i.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2026/01/25/%E9%A3%9E%E7%89%9B%E6%90%AD%E5%BB%BAIPTV-API/" title="飞牛搭建IPTV-API"><img class="cover" src="https://i2.mjj.rip/2024/06/03/f7c06f7e0ffd6201dcea6595f537077d.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">飞牛搭建IPTV-API</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2025/07/27/MoonTV%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/" title="MoonTV安装过程"><img class="cover" src="https://i2.mjj.rip/2024/06/03/f8cc3ec5ed63f39b9842c0294c809556.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-27</div><div class="title">MoonTV安装过程</div></div></a></div><div><a href="/2024/02/17/RackNerd%E6%B5%81%E9%87%8F%E7%BF%BB%E5%80%8D%E6%95%99%E7%A8%8B/" title="RackNerd流量翻倍教程"><img class="cover" src="https://i2.mjj.rip/2024/06/03/454e07a3be0da901465f8f6e9d6846da.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-17</div><div class="title">RackNerd流量翻倍教程</div></div></a></div><div><a href="/2025/08/23/Sun-panel%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/" title="Sun-panel安装过程"><img class="cover" src="https://img2.imgtp.com/2024/01/21/65B49pt5.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-23</div><div class="title">Sun-panel安装过程</div></div></a></div><div><a href="/2026/01/24/rustdesk%E9%83%A8%E7%BD%B2(%E5%B8%A6API%E6%9C%8D%E5%8A%A1%E5%99%A8)/" title="rustdesk部署(带API服务器)"><img class="cover" src="https://i2.mjj.rip/2024/06/03/454e07a3be0da901465f8f6e9d6846da.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-01-24</div><div class="title">rustdesk部署(带API服务器)</div></div></a></div><div><a href="/2025/05/19/unraid%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85immich%E6%95%99%E7%A8%8B/" title="unraid系统安装immich教程"><img class="cover" src="https://img2.imgtp.com/2024/01/21/65B49pt5.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-19</div><div class="title">unraid系统安装immich教程</div></div></a></div><div><a href="/2026/01/24/%E5%AE%89%E8%A3%85komari%E7%94%A8caddy%E5%8F%8D%E4%BB%A3%E6%95%99%E7%A8%8B/" title="安装komari用caddy反代"><img class="cover" src="https://img2.imgtp.com/2024/01/21/a52TIZbA.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-01-24</div><div class="title">安装komari用caddy反代</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://img.picui.cn/free/2024/06/03/665d18b4cb753.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jason M</div><div class="author-info__description">用我三生烟火，换你一世迷离</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">全球互联网网速遥遥领先的大卫电信10005号客服ovpavac大佬服务细致周到，5分好评！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Vertex"><span class="toc-number">1.</span> <span class="toc-text">安装 Vertex</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">一键安装命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E4%B8%8E%E5%AF%86%E7%A0%81%E6%9F%A5%E7%9C%8B%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">登录与密码查看：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-qBittorrent"><span class="toc-number">2.</span> <span class="toc-text">安装 qBittorrent</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">安装命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%BB%BA%E8%AE%AE%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">设置建议：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E4%BF%AE%E5%A4%8D%EF%BC%9A"><span class="toc-number">2.3.</span> <span class="toc-text">常见问题及修复：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E6%AD%A5%E9%85%8D%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%88%B7%E6%B5%81%E8%A7%84%E5%88%99"><span class="toc-number">3.</span> <span class="toc-text">初步配置自动刷流规则</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/01/29/%E5%AE%89%E8%A3%85Vertex%E5%88%B7%E6%B5%81/" title="Vertex刷流安装过程"><img src="https://img2.imgtp.com/2024/01/21/qHnU468i.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vertex刷流安装过程"/></a><div class="content"><a class="title" href="/2026/01/29/%E5%AE%89%E8%A3%85Vertex%E5%88%B7%E6%B5%81/" title="Vertex刷流安装过程">Vertex刷流安装过程</a><time datetime="2026-01-29T08:25:10.000Z" title="发表于 2026-01-29 16:25:10">2026-01-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/25/%E9%A3%9E%E7%89%9B%E6%90%AD%E5%BB%BAIPTV-API/" title="飞牛搭建IPTV-API"><img src="https://i2.mjj.rip/2024/06/03/f7c06f7e0ffd6201dcea6595f537077d.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="飞牛搭建IPTV-API"/></a><div class="content"><a class="title" href="/2026/01/25/%E9%A3%9E%E7%89%9B%E6%90%AD%E5%BB%BAIPTV-API/" title="飞牛搭建IPTV-API">飞牛搭建IPTV-API</a><time datetime="2026-01-25T01:05:10.000Z" title="发表于 2026-01-25 09:05:10">2026-01-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/24/rustdesk%E9%83%A8%E7%BD%B2(%E5%B8%A6API%E6%9C%8D%E5%8A%A1%E5%99%A8)/" title="rustdesk部署(带API服务器)"><img src="https://i2.mjj.rip/2024/06/03/454e07a3be0da901465f8f6e9d6846da.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="rustdesk部署(带API服务器)"/></a><div class="content"><a class="title" href="/2026/01/24/rustdesk%E9%83%A8%E7%BD%B2(%E5%B8%A6API%E6%9C%8D%E5%8A%A1%E5%99%A8)/" title="rustdesk部署(带API服务器)">rustdesk部署(带API服务器)</a><time datetime="2026-01-24T07:05:10.000Z" title="发表于 2026-01-24 15:05:10">2026-01-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/24/%E5%AE%89%E8%A3%85komari%E7%94%A8caddy%E5%8F%8D%E4%BB%A3%E6%95%99%E7%A8%8B/" title="安装komari用caddy反代"><img src="https://img2.imgtp.com/2024/01/21/a52TIZbA.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="安装komari用caddy反代"/></a><div class="content"><a class="title" href="/2026/01/24/%E5%AE%89%E8%A3%85komari%E7%94%A8caddy%E5%8F%8D%E4%BB%A3%E6%95%99%E7%A8%8B/" title="安装komari用caddy反代">安装komari用caddy反代</a><time datetime="2026-01-24T04:05:10.000Z" title="发表于 2026-01-24 12:05:10">2026-01-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/23/Sun-panel%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/" title="Sun-panel安装过程"><img src="https://img2.imgtp.com/2024/01/21/65B49pt5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Sun-panel安装过程"/></a><div class="content"><a class="title" href="/2025/08/23/Sun-panel%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/" title="Sun-panel安装过程">Sun-panel安装过程</a><time datetime="2025-08-23T06:59:10.000Z" title="发表于 2025-08-23 14:59:10">2025-08-23</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://img2.imgtp.com/2024/01/21/qHnU468i.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2026 By Jason M</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const disqus_config = function () {
+    this.page.url = 'https://www.digs.eu.org/2026/01/29/%E5%AE%89%E8%A3%85Vertex%E5%88%B7%E6%B5%81/'
+    this.page.identifier = '/2026/01/29/%E5%AE%89%E8%A3%85Vertex%E5%88%B7%E6%B5%81/'
+    this.page.title = 'Vertex刷流安装过程'
+  }
+
+  const disqusReset = () => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addGlobalFn('themeChange', disqusReset, 'disqus')
+
+  const loadDisqus = () =>{
+    if (window.DISQUS) disqusReset()
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://sou-xun-wan-mei.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=sou-xun-wan-mei&api_key=For newest comments widget&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.isPost && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
